@@ -9,7 +9,7 @@
 import Foundation
 import OAuthSwift
 
-class TwitterApi {
+public class TwitterApi {
     var oauth1: OAuth1Swift
     let TWITTER_API = "https://api.twitter.com/1.1/"
     

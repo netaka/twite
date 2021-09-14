@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct List: Identifiable, Codable {
+public struct List: Identifiable, Codable {
     let createdAt: Date
     let slug: String
     let name: String

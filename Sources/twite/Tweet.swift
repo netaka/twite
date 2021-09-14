@@ -8,20 +8,20 @@
 
 import Foundation
 
-struct Size: Codable {
+public struct Size: Codable {
     let w: Int
     let h: Int
     let resize: String
 }
 
-struct Sizes: Codable {
+public struct Sizes: Codable {
     let large: Size
     let medium: Size
     let small: Size
     let thumb: Size
 }
 
-struct Media: Identifiable, Codable {
+public struct Media: Identifiable, Codable {
     let id: Int64
     let idStr: String
     let mediaUrl: String
@@ -31,21 +31,21 @@ struct Media: Identifiable, Codable {
     let url: String
 }
 
-struct Url: Hashable, Codable {
+public struct Url: Hashable, Codable {
     let url: String
     let expandedUrl: String
     let displayUrl: String
 }
 
-struct Entities: Codable {
+public struct Entities: Codable {
     let urls: [Url]?
 }
 
-struct ExtendedEntities: Codable {
+public struct ExtendedEntities: Codable {
     let media: [Media]?
 }
 
-struct RetweetedStatus: Codable {
+public struct RetweetedStatus: Codable {
     let id: Int64
     let idStr: String
     let text: String?
@@ -63,7 +63,7 @@ struct RetweetedStatus: Codable {
     let possiblySensitive: Bool?
 }
 
-struct QuotedStatus: Codable {
+public struct QuotedStatus: Codable {
     let id: Int64
     let idStr: String
     let text: String?
@@ -81,11 +81,11 @@ struct QuotedStatus: Codable {
     let possiblySensitive: Bool?
 }
 
-struct QuotedStatusPermalink: Codable {
+public struct QuotedStatusPermalink: Codable {
     let url: String
 }
 
-struct Tweet: Identifiable, Codable {
+public struct Tweet: Identifiable, Codable {
     let createdAt: Date
     let id: Int64
     let idStr: String

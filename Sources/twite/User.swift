@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct User: Equatable, Codable, Hashable {
+public struct User: Equatable, Codable, Hashable {
     let id: Int
     let idStr: String
     let screenName: String
@@ -58,6 +58,6 @@ struct User: Equatable, Codable, Hashable {
     }
 }
 
-struct Users: Codable {
+public struct Users: Codable {
     let users: [User]
 }
