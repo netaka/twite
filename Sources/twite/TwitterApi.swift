@@ -10,13 +10,11 @@ import Foundation
 import OAuthSwift
 
 public class TwitterApi {
-    var oauth1: OAuth1Swift
+    let oauth1: OAuth1Swift
     let TWITTER_API = "https://api.twitter.com/1.1/"
     
-    init() {
-        oauth1 = OAuth1Swift(consumerKey: TweetAccount.consumerKey, consumerSecret: TweetAccount.consumerSecret)
-        oauth1.client.credential.oauthToken = TweetAccount.oauthToken
-        oauth1.client.credential.oauthTokenSecret = TweetAccount.oauthTokenSecret
+    init(oauth1: OAuth1Swift) {
+        self.oauth1 = oauth1
     }
     
     func postUpdate(_ status: String) {
