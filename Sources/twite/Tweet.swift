@@ -9,104 +9,104 @@
 import Foundation
 
 public struct Size: Codable {
-    let w: Int
-    let h: Int
-    let resize: String
+    public let w: Int
+    public let h: Int
+    public let resize: String
 }
 
 public struct Sizes: Codable {
-    let large: Size
-    let medium: Size
-    let small: Size
-    let thumb: Size
+    public let large: Size
+    public let medium: Size
+    public let small: Size
+    public let thumb: Size
 }
 
 public struct Media: Identifiable, Codable {
-    let id: Int64
-    let idStr: String
-    let mediaUrl: String
-    let mediaUrlHttps: String
-    let sizes: Sizes
-    let type: String
-    let url: String
+    public let id: Int64
+    public let idStr: String
+    public let mediaUrl: String
+    public let mediaUrlHttps: String
+    public let sizes: Sizes
+    public let type: String
+    public let url: String
 }
 
 public struct Url: Hashable, Codable {
-    let url: String
-    let expandedUrl: String
-    let displayUrl: String
+    public let url: String
+    public let expandedUrl: String
+    public let displayUrl: String
 }
 
 public struct Entities: Codable {
-    let urls: [Url]?
+    public let urls: [Url]?
 }
 
 public struct ExtendedEntities: Codable {
-    let media: [Media]?
+    public let media: [Media]?
 }
 
 public struct RetweetedStatus: Codable {
-    let id: Int64
-    let idStr: String
-    let text: String?
-    let fullText: String?
-    let user: User
-    let entities: Entities?
-    let extendedEntities: ExtendedEntities?
-    let createdAt: Date
-    let quoteCount: Int?
-    let replyCount: Int?
-    let retweetCount: Int?
-    let favoriteCount: Int?
-    let favorited: Bool
-    let retweeted: Bool
-    let possiblySensitive: Bool?
+    public let id: Int64
+    public let idStr: String
+    public let text: String?
+    public let fullText: String?
+    public let user: User
+    public let entities: Entities?
+    public let extendedEntities: ExtendedEntities?
+    public let createdAt: Date
+    public let quoteCount: Int?
+    public let replyCount: Int?
+    public let retweetCount: Int?
+    public let favoriteCount: Int?
+    public let favorited: Bool
+    public let retweeted: Bool
+    public let possiblySensitive: Bool?
 }
 
 public struct QuotedStatus: Codable {
-    let id: Int64
-    let idStr: String
-    let text: String?
-    let fullText: String?
-    let user: User
-    let entities: Entities?
-    let extendedEntities: ExtendedEntities?
-    let createdAt: Date
-    let quoteCount: Int?
-    let replyCount: Int?
-    let retweetCount: Int?
-    let favoriteCount: Int?
-    let favorited: Bool
-    let retweeted: Bool
-    let possiblySensitive: Bool?
+    public let id: Int64
+    public let idStr: String
+    public let text: String?
+    public let fullText: String?
+    public let user: User
+    public let entities: Entities?
+    public let extendedEntities: ExtendedEntities?
+    public let createdAt: Date
+    public let quoteCount: Int?
+    public let replyCount: Int?
+    public let retweetCount: Int?
+    public let favoriteCount: Int?
+    public let favorited: Bool
+    public let retweeted: Bool
+    public let possiblySensitive: Bool?
 }
 
 public struct QuotedStatusPermalink: Codable {
-    let url: String
+    public let url: String
 }
 
 public struct Tweet: Identifiable, Codable {
-    let createdAt: Date
-    let id: Int64
-    let idStr: String
-    let text: String?
-    let fullText: String?
-    let source: String
-    let user: User
-    let entities: Entities?
-    let extendedEntities: ExtendedEntities?
-    let retweetedStatus: RetweetedStatus?
-    let quotedStatusPermalink: QuotedStatusPermalink?
-    let quotedStatus: QuotedStatus?
-    let quoteCount: Int?
-    let replyCount: Int?
-    let retweetCount: Int?
-    let favoriteCount: Int?
-    let favorited: Bool
-    let retweeted: Bool
-    let possiblySensitive: Bool?
+    public let createdAt: Date
+    public let id: Int64
+    public let idStr: String
+    public let text: String?
+    public let fullText: String?
+    public let source: String
+    public let user: User
+    public let entities: Entities?
+    public let extendedEntities: ExtendedEntities?
+    public let retweetedStatus: RetweetedStatus?
+    public let quotedStatusPermalink: QuotedStatusPermalink?
+    public let quotedStatus: QuotedStatus?
+    public let quoteCount: Int?
+    public let replyCount: Int?
+    public let retweetCount: Int?
+    public let favoriteCount: Int?
+    public let favorited: Bool
+    public let retweeted: Bool
+    public let possiblySensitive: Bool?
     
-    init() {
+    public init() {
         self.createdAt = Date()
         self.id = 0
         self.idStr = ""
@@ -128,7 +128,7 @@ public struct Tweet: Identifiable, Codable {
         self.possiblySensitive = nil
     }
     
-    init(id: Int64, idStr: String, text: String, fullText: String) {
+    public init(id: Int64, idStr: String, text: String, fullText: String) {
         self.createdAt = Date()
         self.id = id
         self.idStr = idStr
@@ -150,7 +150,7 @@ public struct Tweet: Identifiable, Codable {
         self.possiblySensitive = nil
     }
     
-    init(retweet: RetweetedStatus) {
+    public init(retweet: RetweetedStatus) {
         self.createdAt = retweet.createdAt
         self.id = retweet.id
         self.idStr = retweet.idStr
@@ -172,7 +172,7 @@ public struct Tweet: Identifiable, Codable {
         self.possiblySensitive = retweet.possiblySensitive
     }
     
-    init(quote: QuotedStatus) {
+    public init(quote: QuotedStatus) {
         self.createdAt = quote.createdAt
         self.id = quote.id
         self.idStr = quote.idStr
@@ -194,12 +194,12 @@ public struct Tweet: Identifiable, Codable {
         self.possiblySensitive = quote.possiblySensitive
     }
     
-    static func Sample() -> Self {
+    public static func Sample() -> Self {
         let tweet = Tweet(id: 1, idStr: "1", text: "sample text", fullText: "this is sample text")
         return tweet
     }
     
-    func HasMedia() -> Bool {
+    public func HasMedia() -> Bool {
         var hasMedia = false
         if let extendedEntities = self.extendedEntities {
             if extendedEntities.media != nil {

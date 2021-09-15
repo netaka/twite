@@ -9,20 +9,20 @@
 import Foundation
 
 public struct List: Identifiable, Codable {
-    let createdAt: Date
-    let slug: String
-    let name: String
-    let fullName: String
-    let description: String
-    let mode: String
-    let following: Bool
-    let memberCount: Int32
-    let idStr: String
-    let subscriberCount: Int32
-    let id: Int64
-    let url: String?
+    public let createdAt: Date
+    public let slug: String
+    public let name: String
+    public let fullName: String
+    public let description: String
+    public let mode: String
+    public let following: Bool
+    public let memberCount: Int32
+    public let idStr: String
+    public let subscriberCount: Int32
+    public let id: Int64
+    public let url: String?
     
-    init() {
+    public init() {
         createdAt = Date()
         slug = ""
         name = ""

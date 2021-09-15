@@ -9,34 +9,34 @@
 import Foundation
 
 public struct User: Equatable, Codable, Hashable {
-    let id: Int
-    let idStr: String
-    let screenName: String
-    let name: String
-    let location: String
-    let url: String?
-    let description: String
-    let protected: Bool
-    let verified: Bool
-    let followersCount: Int
-    let friendsCount: Int
-    let listedCount: Int
-    let favouritesCount: Int
-    let statusesCount: Int
-    let profileBannerUrl: String?
-    let profileImageUrlHttps: String
-    let defaultProfile: Bool
-    let defaultProfileImage: Bool
+    public let id: Int
+    public let idStr: String
+    public let screenName: String
+    public let name: String
+    public let location: String
+    public let url: String?
+    public let description: String
+    public let protected: Bool
+    public let verified: Bool
+    public let followersCount: Int
+    public let friendsCount: Int
+    public let listedCount: Int
+    public let favouritesCount: Int
+    public let statusesCount: Int
+    public let profileBannerUrl: String?
+    public let profileImageUrlHttps: String
+    public let defaultProfile: Bool
+    public let defaultProfileImage: Bool
     
-    static func == (lhs: User, rhs: User) -> Bool {
+    public static func == (lhs: User, rhs: User) -> Bool {
         return lhs.id == rhs.id
     }
     
-    func hash(into hasher: inout Hasher) {
+    public func hash(into hasher: inout Hasher) {
         id.hash(into: &hasher)
     }
     
-    init() {
+    public init() {
         id = 0
         idStr = ""
         screenName = ""
@@ -59,5 +59,5 @@ public struct User: Equatable, Codable, Hashable {
 }
 
 public struct Users: Codable {
-    let users: [User]
+    public let users: [User]
 }
