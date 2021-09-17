@@ -13,7 +13,7 @@ public class TwitterApi {
     let oauth1: OAuth1Swift
     let TWITTER_API = "https://api.twitter.com/1.1/"
     
-    init(oauth1: OAuth1Swift) {
+    public init(oauth1: OAuth1Swift) {
         self.oauth1 = oauth1
     }
     
