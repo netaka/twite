@@ -17,7 +17,7 @@ public class TwitterApi {
         self.oauth1 = oauth1
     }
     
-    func postUpdate(_ status: String) {
+    public func postUpdate(_ status: String) {
         let parameters: OAuthSwift.Parameters = [
             "status": status
         ]
@@ -30,7 +30,7 @@ public class TwitterApi {
             }
         }
     }
-    func postRetweet(_ idStr: String) {
+    public func postRetweet(_ idStr: String) {
         oauth1.client.post(TWITTER_API + "statuses/retweet/\(idStr).json") { result in
             switch result {
             case .success(let response):
@@ -40,7 +40,7 @@ public class TwitterApi {
             }
         }
     }
-    func getUserTimeline(_ screenName: String, count: Int = 200, success: @escaping (Data) -> Void) {
+    public func getUserTimeline(_ screenName: String, count: Int = 200, success: @escaping (Data) -> Void) {
         oauth1.client.get(TWITTER_API + "statuses/user_timeline.json?screen_name=\(screenName)&count=\(count)&tweet_mode=extended") { result in
             switch result {
             case .success(let response):
@@ -51,7 +51,7 @@ public class TwitterApi {
             }
         }
     }
-    func getHomeTimeline(count: Int = 200, success: @escaping (Data) -> Void) {
+    public func getHomeTimeline(count: Int = 200, success: @escaping (Data) -> Void) {
         oauth1.client.get(TWITTER_API + "statuses/home_timeline.json?count=\(count)") { result in
             switch result {
             case .success(let response):
@@ -62,7 +62,7 @@ public class TwitterApi {
             }
         }
     }
-    func getFriendsList(count: Int = 200, success: @escaping (Data) -> Void) -> Void {
+    public func getFriendsList(count: Int = 200, success: @escaping (Data) -> Void) -> Void {
         oauth1.client.get(TWITTER_API + "friends/list.json?count=\(count)") { result in
             switch result {
             case .success(let response):
@@ -73,7 +73,7 @@ public class TwitterApi {
             }
         }
     }
-    func getFollowersList(count: Int = 200, success: @escaping (Data) -> Void) -> Void {
+    public func getFollowersList(count: Int = 200, success: @escaping (Data) -> Void) -> Void {
         oauth1.client.get(TWITTER_API + "followers/list.json?count=\(count)") { result in
             switch result {
             case .success(let response):
@@ -84,7 +84,7 @@ public class TwitterApi {
             }
         }
     }
-    func getUserProfile(_ screenName: String, success: @escaping (Data) -> Void) -> Void {
+    public func getUserProfile(_ screenName: String, success: @escaping (Data) -> Void) -> Void {
         oauth1.client.get(TWITTER_API + "users/show.json?screen_name=\(screenName)") { result in
             switch result {
             case .success(let response):
@@ -95,7 +95,7 @@ public class TwitterApi {
             }
         }
     }
-    func getListsStatuses(_ list_id: String, count: Int=200, success: @escaping (Data) -> Void) -> Void {
+    public func getListsStatuses(_ list_id: String, count: Int=200, success: @escaping (Data) -> Void) -> Void {
         oauth1.client.get(TWITTER_API + "lists/statuses.json?list_id=\(list_id)&count=\(count)&tweet_mode=extended") { result in
             switch result {
             case .success(let response):
@@ -106,7 +106,7 @@ public class TwitterApi {
             }
         }
     }
-    func getListsShow(_ list_id: String, success: @escaping (Data) -> Void) -> Void {
+    public func getListsShow(_ list_id: String, success: @escaping (Data) -> Void) -> Void {
         oauth1.client.get(TWITTER_API + "lists/show.json?list_id=\(list_id)") { result in
             switch result {
             case .success(let response):
