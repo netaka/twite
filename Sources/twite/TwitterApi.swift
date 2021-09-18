@@ -17,29 +17,6 @@ public class TwitterApi {
         self.oauth1 = oauth1
     }
     
-    public func postUpdate(_ status: String) {
-        let parameters: OAuthSwift.Parameters = [
-            "status": status
-        ]
-        oauth1.client.post(TWITTER_API + "statuses/update.json", parameters: parameters) { result in
-            switch result {
-            case .success(let response):
-                print(response.string!)
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    public func postRetweet(_ idStr: String) {
-        oauth1.client.post(TWITTER_API + "statuses/retweet/\(idStr).json") { result in
-            switch result {
-            case .success(let response):
-                print(response.string!)
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
     public func getUserTimeline(_ screenName: String, count: Int = 200, success: @escaping (Data) -> Void) {
         oauth1.client.get(TWITTER_API + "statuses/user_timeline.json?screen_name=\(screenName)&count=\(count)&tweet_mode=extended") { result in
             switch result {
