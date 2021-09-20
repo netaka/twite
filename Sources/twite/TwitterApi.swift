@@ -72,26 +72,4 @@ public class TwitterApi {
             }
         }
     }
-    public func getListsStatuses(_ list_id: String, count: Int=200, success: @escaping (Data) -> Void) -> Void {
-        oauth1.client.get(TWITTER_API + "lists/statuses.json?list_id=\(list_id)&count=\(count)&tweet_mode=extended") { result in
-            switch result {
-            case .success(let response):
-                let data = response.data
-                success(data)
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    public func getListsShow(_ list_id: String, success: @escaping (Data) -> Void) -> Void {
-        oauth1.client.get(TWITTER_API + "lists/show.json?list_id=\(list_id)") { result in
-            switch result {
-            case .success(let response):
-                let data = response.data
-                success(data)
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
 }
