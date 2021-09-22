@@ -24,8 +24,8 @@ extension TwitterApi {
     }
     
     //https://developer.twitter.com/en/docs/twitter-api/v1/accounts-and-users/create-manage-lists/api-reference/get-lists-members
-    public func getListsMembers(_ listId: String, success: @escaping (Data) -> Void) -> Void {
-        oauth1.client.get(TWITTER_API + "lists/members.json?list_id=\(listId)") { result in
+    public func getListsMembers(_ listId: String, count: Int=5000, success: @escaping (Data) -> Void) -> Void {
+        oauth1.client.get(TWITTER_API + "lists/members.json?list_id=\(listId)&count=\(count)") { result in
             switch result {
             case .success(let response):
                 let data = response.data
