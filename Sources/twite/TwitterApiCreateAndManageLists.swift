@@ -44,7 +44,6 @@ extension TwitterApi {
                 let data = response.data
                 success(data)
             case .failure(let error):
-                print(error)
                 failure(error)
             }
         }
