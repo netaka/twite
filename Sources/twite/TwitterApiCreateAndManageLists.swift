@@ -37,7 +37,7 @@ extension TwitterApi {
     }
     
     //https://developer.twitter.com/en/docs/twitter-api/v1/accounts-and-users/create-manage-lists/api-reference/get-lists-members-show
-    public func getListsMembersShow(_ listId: String, screenName: String, success: @escaping (Data) -> Void) -> Void {
+    public func getListsMembersShow(_ listId: String, screenName: String, success: @escaping (Data) -> Void, failure: @escaping (OAuthSwiftError) -> Void) -> Void {
         oauth1.client.get(TWITTER_API + "lists/members/show.json?list_id=\(listId)&screen_name=\(screenName)") { result in
             switch result {
             case .success(let response):
@@ -45,6 +45,7 @@ extension TwitterApi {
                 success(data)
             case .failure(let error):
                 print(error)
+                failure(error)
             }
         }
     }
