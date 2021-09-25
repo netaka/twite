@@ -31,13 +31,20 @@ public struct Media: Identifiable, Codable {
     public let url: String
 }
 
+public struct Hashtag: Hashable, Codable {
+    public let text: String
+    public let indices: [Int]
+}
+
 public struct Url: Hashable, Codable {
     public let url: String
     public let expandedUrl: String
     public let displayUrl: String
+    public let indices: [Int]
 }
 
 public struct Entities: Codable {
+    public let hashtags: [Hashtag]?
     public let urls: [Url]?
 }
 
