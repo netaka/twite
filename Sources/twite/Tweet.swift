@@ -36,6 +36,14 @@ public struct Hashtag: Hashable, Codable {
     public let indices: [Int]
 }
 
+public struct UserMention: Hashable, Codable {
+    public let name: String
+    public let indices: [Int]
+    public let screenName: String
+    public let id: Int64
+    public let idStr: String
+}
+
 public struct Url: Hashable, Codable {
     public let url: String
     public let expandedUrl: String
@@ -45,6 +53,7 @@ public struct Url: Hashable, Codable {
 
 public struct Entities: Codable {
     public let hashtags: [Hashtag]?
+    public let userMentions: [UserMention]?
     public let urls: [Url]?
 }
 
