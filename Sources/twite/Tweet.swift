@@ -108,6 +108,12 @@ public struct Tweet: Identifiable, Codable {
     public let text: String?
     public let fullText: String?
     public let source: String
+    public let truncated: Bool
+    public let inReplyToStatusId: Int64?
+    public let inReplyToStatusIdStr: String?
+    public let inReplyToSserId: Int64?
+    public let inReplyToSserIdStr: String?
+    public let inReplyToScreenName: String?
     public let user: User
     public let entities: Entities?
     public let extendedEntities: ExtendedEntities?
@@ -129,6 +135,12 @@ public struct Tweet: Identifiable, Codable {
         self.text = ""
         self.fullText = ""
         self.source = ""
+        self.truncated = false
+        self.inReplyToStatusId = nil
+        self.inReplyToStatusIdStr = nil
+        self.inReplyToSserId = nil
+        self.inReplyToSserIdStr = nil
+        self.inReplyToScreenName = nil
         self.user = User()
         self.entities = nil
         self.extendedEntities = nil
@@ -151,6 +163,12 @@ public struct Tweet: Identifiable, Codable {
         self.text = text
         self.fullText = fullText
         self.source = ""
+        self.truncated = false
+        self.inReplyToStatusId = nil
+        self.inReplyToStatusIdStr = nil
+        self.inReplyToSserId = nil
+        self.inReplyToSserIdStr = nil
+        self.inReplyToScreenName = nil
         self.user = User()
         self.entities = nil
         self.extendedEntities = nil
@@ -173,6 +191,12 @@ public struct Tweet: Identifiable, Codable {
         self.text = retweet.text
         self.fullText = retweet.fullText
         self.source = ""
+        self.truncated = false
+        self.inReplyToStatusId = nil
+        self.inReplyToStatusIdStr = nil
+        self.inReplyToSserId = nil
+        self.inReplyToSserIdStr = nil
+        self.inReplyToScreenName = nil
         self.user = retweet.user
         self.entities = retweet.entities
         self.extendedEntities = retweet.extendedEntities
@@ -195,6 +219,12 @@ public struct Tweet: Identifiable, Codable {
         self.text = quote.text
         self.fullText = quote.fullText
         self.source = ""
+        self.truncated = false
+        self.inReplyToStatusId = nil
+        self.inReplyToStatusIdStr = nil
+        self.inReplyToSserId = nil
+        self.inReplyToSserIdStr = nil
+        self.inReplyToScreenName = nil
         self.user = quote.user
         self.entities = quote.entities
         self.extendedEntities = quote.extendedEntities
