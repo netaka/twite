@@ -111,8 +111,8 @@ public struct Tweet: Identifiable, Codable {
     public let truncated: Bool
     public let inReplyToStatusId: Int64?
     public let inReplyToStatusIdStr: String?
-    public let inReplyToSserId: Int64?
-    public let inReplyToSserIdStr: String?
+    public let inReplyToUserId: Int64?
+    public let inReplyToUserIdStr: String?
     public let inReplyToScreenName: String?
     public let user: User
     public let entities: Entities?
@@ -138,8 +138,8 @@ public struct Tweet: Identifiable, Codable {
         self.truncated = false
         self.inReplyToStatusId = nil
         self.inReplyToStatusIdStr = nil
-        self.inReplyToSserId = nil
-        self.inReplyToSserIdStr = nil
+        self.inReplyToUserId = nil
+        self.inReplyToUserIdStr = nil
         self.inReplyToScreenName = nil
         self.user = User()
         self.entities = nil
@@ -166,8 +166,8 @@ public struct Tweet: Identifiable, Codable {
         self.truncated = false
         self.inReplyToStatusId = nil
         self.inReplyToStatusIdStr = nil
-        self.inReplyToSserId = nil
-        self.inReplyToSserIdStr = nil
+        self.inReplyToUserId = nil
+        self.inReplyToUserIdStr = nil
         self.inReplyToScreenName = nil
         self.user = User()
         self.entities = nil
@@ -194,8 +194,8 @@ public struct Tweet: Identifiable, Codable {
         self.truncated = false
         self.inReplyToStatusId = nil
         self.inReplyToStatusIdStr = nil
-        self.inReplyToSserId = nil
-        self.inReplyToSserIdStr = nil
+        self.inReplyToUserId = nil
+        self.inReplyToUserIdStr = nil
         self.inReplyToScreenName = nil
         self.user = retweet.user
         self.entities = retweet.entities
@@ -222,8 +222,8 @@ public struct Tweet: Identifiable, Codable {
         self.truncated = false
         self.inReplyToStatusId = nil
         self.inReplyToStatusIdStr = nil
-        self.inReplyToSserId = nil
-        self.inReplyToSserIdStr = nil
+        self.inReplyToUserId = nil
+        self.inReplyToUserIdStr = nil
         self.inReplyToScreenName = nil
         self.user = quote.user
         self.entities = quote.entities
