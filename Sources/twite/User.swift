@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct User: Equatable, Codable, Hashable {
+public class User: ObservableObject, Equatable, Codable, Hashable {
     public let id: Int
     public let idStr: String
     public let screenName: String
