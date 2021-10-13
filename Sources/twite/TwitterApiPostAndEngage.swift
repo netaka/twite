@@ -39,7 +39,7 @@ extension TwitterApi {
  
     //https://developer.twitter.com/en/docs/twitter-api/v1/tweets/post-and-engage/api-reference/get-statuses-show-id
     public func getStatusesShow(_ idStr: String, success: @escaping (Data) -> Void) {
-        oauth1.client.get(TWITTER_API + "statuses/show.json?id=\(idStr)") { result in
+        oauth1.client.get(TWITTER_API + "statuses/show.json?id=\(idStr)&tweet_mode=extended") { result in
             switch result {
             case .success(let response):
                 let data = response.data
