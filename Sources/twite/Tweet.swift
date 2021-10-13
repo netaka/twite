@@ -61,7 +61,6 @@ public struct ExtendedEntities: Codable {
     public let media: [Media]?
 }
 
-@available(iOS 13.0, *)
 public struct RetweetedStatus: Codable {
     public let id: Int64
     public let idStr: String
@@ -80,7 +79,6 @@ public struct RetweetedStatus: Codable {
     public let possiblySensitive: Bool?
 }
 
-@available(iOS 13.0, *)
 public struct QuotedStatus: Codable {
     public let id: Int64
     public let idStr: String
@@ -103,7 +101,6 @@ public struct QuotedStatusPermalink: Codable {
     public let url: String
 }
 
-@available(iOS 13.0, *)
 public struct Tweet: Identifiable, Codable {
     public let createdAt: Date
     public let id: Int64

@@ -8,7 +8,6 @@
 
 import Foundation
 
-@available(iOS 13.0, *)
 public class User: ObservableObject, Equatable, Codable, Hashable {
     public let id: Int
     public let idStr: String
@@ -59,7 +58,6 @@ public class User: ObservableObject, Equatable, Codable, Hashable {
     }
 }
 
-@available(iOS 13.0, *)
-public class Users: ObservableObject, Codable {
+public struct Users: Codable {
     public let users: [User]
 }
