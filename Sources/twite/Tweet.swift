@@ -8,6 +8,10 @@
 
 import Foundation
 
+public protocol Status {
+    
+}
+
 public struct Size: Codable {
     public let w: Int
     public let h: Int
@@ -61,7 +65,7 @@ public struct ExtendedEntities: Codable {
     public let media: [Media]?
 }
 
-public struct RetweetedStatus: Codable {
+public struct RetweetedStatus: Codable, Status {
     public let id: Int64
     public let idStr: String
     public let text: String?
@@ -79,7 +83,7 @@ public struct RetweetedStatus: Codable {
     public let possiblySensitive: Bool?
 }
 
-public struct QuotedStatus: Codable {
+public struct QuotedStatus: Codable, Status {
     public let id: Int64
     public let idStr: String
     public let text: String?
@@ -101,7 +105,7 @@ public struct QuotedStatusPermalink: Codable {
     public let url: String
 }
 
-public struct Tweet: Identifiable, Codable {
+public struct Tweet: Identifiable, Codable, Status {
     public let createdAt: Date
     public let id: Int64
     public let idStr: String
